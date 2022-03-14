@@ -1,19 +1,25 @@
 #! /bin/bash -x
+#Unit Conversion Using Case
 
-#Inch to Feet
+echo " *** UNIT CONVERSION *** "
+echo " 1. Feet To Inch "
+echo " 2. Inch To Feet "
+echo " 3. Feet To Meter "
+echo " 4. Meter To Feet "
 
-inch=42
-ft=$(( $inch / 12 ))
-echo "Feet: " $ft
-echo "Inch: " $inch
+read -p " Enter The Conversion Number To Be Performed : "ConversionNumber
+read -p " Eneter Your Number : "Number
 
-#Meter of 60x40 Meter Rectangular Plot 
-
-meter=$( echo | awk '{ print 60*40*0.3048 }' )
-echo "Plot Meter : " $meter
-
-#Acre of 25 Plot
-
-acre=$( echo | awk '{ print ((60*40)/43650)*25}' )
-echo "25 Plot in Acres :" $acre
-
+case $ConversionNumber in
+	1)
+		value=$( echo | awk '{ print '$number*12'}');;
+	2)
+		value=$( echo | awk '{ print '$number/12'}');;
+	3)
+		value=$( echo | awk '{print '$number*0.3048'}');;
+	4)
+		value=$( echo | awk '{ print '$number/0.3048'}');;
+	*)
+		echo " Sorry. Invalid Choice "
+esac
+echo $value
