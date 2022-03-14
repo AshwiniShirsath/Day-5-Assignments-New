@@ -2,30 +2,21 @@
 
 random=$(( RANDOM % 8 ))
 
-if(( random==1 ))
-then
-	echo "MONDAY"
-
-elif(( random==2 ))
-then
-	echo "TUESDAY"
-
-elif(( random==3 ))
-then
-	echo "WEDNESDAY"
-
-elif(( random==4 ))
-then
-	echo "THUSDAY"
-
-elif(( random==5 ))
-then
-	echo "SATURDAY"
-
-elif(( random==6 ))
-then
-	echo "SUNDAY"
-
-else
-	echo "INVALIDE INPUT"
-fi
+case $random in
+		1)
+			echo "Sunday";;
+		2)
+			echo "Monday";;
+		3)
+			echo "Tusday";;
+		4)
+			echo "Wednesday";;
+		5)
+			echo "Thrusday";;
+		6)
+			echo "Friday";;
+		7)
+			echo "Saterday";;
+		*)
+			echo "Invalid"
+esac
